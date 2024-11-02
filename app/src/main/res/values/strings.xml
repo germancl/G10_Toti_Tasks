@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">G10_ToDoTasks</string>
+    <string name="taskTitle">Minhas tarefas</string>
 </resources>

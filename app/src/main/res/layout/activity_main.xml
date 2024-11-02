@@ -6,40 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <!--Layout Items-->
     <TextView
         android:id="@+id/mainTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/checklist"
-        android:drawableTint="#A94F4F"
-        android:text="Minhas tarefas"
-        android:textSize="27dp"
-        android:textStyle="bold"
+        style="@style/title_main"
+        app:drawableEndCompat="@drawable/checklist"
+        app:drawableTint="#A94F4F"
         app:layout_constraintBottom_toTopOf="@+id/topMiddleGuide"
         app:layout_constraintEnd_toStartOf="@+id/rightGuide"
         app:layout_constraintStart_toStartOf="@+id/leftGuide"
         app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/mainTitle"
-        android:nestedScrollingEnabled="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/bottomMiddleGuide"
-        app:layout_constraintEnd_toStartOf="@+id/rightGuide"
-        app:layout_constraintStart_toStartOf="@+id/leftGuide"
-        app:layout_constraintTop_toTopOf="@+id/topMiddleGuide"
-        tools:ignore="MissingConstraints" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainTitle"
+            android:nestedScrollingEnabled="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/bottomMiddleGuide"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toTopOf="@+id/topMiddleGuide"
+            tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#21D0F3"
-        android:src="@drawable/add"
+        style="@style/fab_button"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
         app:layout_constraintEnd_toStartOf="@+id/rightGuide"
         app:layout_constraintTop_toTopOf="@+id/bottomMiddleGuide"
         tools:ignore="ContentDescription,MissingConstraints" />
@@ -51,6 +45,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
 
+    <!--    Guidelines-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rightGuide"
         android:layout_width="wrap_content"

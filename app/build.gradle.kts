@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.fragment.ktx)
     // For control over item selection of both touch and mouse driven selection
     implementation(libs.androidx.recyclerview.selection)
     implementation(libs.androidx.cardview)
