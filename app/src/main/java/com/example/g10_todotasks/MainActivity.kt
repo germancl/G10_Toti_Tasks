@@ -1,6 +1,11 @@
 package com.example.g10_todotasks
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,6 +18,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataList: ArrayList<Data>
     lateinit var titleList: ArrayList<String>
+    lateinit var spinDate: ArrayList<String>
+    lateinit var spinHour: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +32,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         titleList = arrayListOf(
-            "task1",
+            "Fazer compras no supermercado",
             "task2",
             "task3",
             "task4",
-            "task5",
-            "task6",
-            "task7"
+            "task5"
+        )
+
+        spinDate = arrayListOf(
+            "01/01/2001",
+            "01/01/2001",
+            "01/01/2001",
+            "01/01/2001",
+            "01/01/2001"
+        )
+
+        spinHour = arrayListOf(
+            "00:00",
+            "01:00",
+            "02:00",
+            "03:00",
+            "04:00",
+            "05:00"
         )
 
         recyclerView = findViewById(R.id.recyclerView)
@@ -40,6 +62,56 @@ class MainActivity : AppCompatActivity() {
 
         dataList = arrayListOf<Data>()
         getData()
+
+        val spinner: Spinner = findViewById(R.id.dates)
+        val arrayAdapter =
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinDate)
+
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(
+                    applicationContext,
+                    "selected date is = " + spinDate[position],
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
+
+        val spinnerHour: Spinner = findViewById(R.id.times)
+        val arrayAdapterHour =
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinHour)
+
+        spinnerHour.adapter = arrayAdapterHour
+        spinnerHour.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(
+                    applicationContext,
+                    "selected hour is = " + spinHour[position],
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
     }
 
     private fun getData() {

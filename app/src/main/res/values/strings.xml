@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">G10_ToDoTasks</string>
-    <string name="taskTitle">Minhas tarefas</string>
+    <string name="taskTitle">My tasks</string>
+    <string name="editTask">Enter the task to be created here</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
 </resources>
