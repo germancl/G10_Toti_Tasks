@@ -3,4 +3,6 @@
     <string name="app_name">G10_ToDoTasks</string>
     <string name="taskTitle">Minhas tarefas</string>
     <string name="editTask">Digite a tarefa a ser criada aqui</string>
+    <string name="editBtn">Editar</string>
+    <string name="removeBtn">Apagar</string>
 </resources>
