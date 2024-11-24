@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/customToolbarDetails"
+            layout="@layout/custom_toolbar_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp"
+            android:text="Qual a tarefa a ser realizada?"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toTopOf="@+id/topGuide" />
+
+        <EditText
+            android:id="@+id/writeTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Digite a nova tarefa que deseja incluir"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/textTask" />
+
+        <TextView
+            android:id="@+id/delTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingTop="50dp"
+            android:text="Qual o prazo para ser realizada?"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/writeTask" />
+
+        <EditText
+            android:id="@+id/writeDelDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Defina a data de entrega"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/delTime" />
+
+        <ImageView
+            android:id="@+id/calendar_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:padding="9dp"
+            android:src="@drawable/calendar_month"
+            app:layout_constraintBottom_toBottomOf="@+id/writeDelDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.102"
+            app:layout_constraintStart_toEndOf="@+id/writeDelDate" />
+
+        <EditText
+            android:id="@+id/writeDelTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Digite um horário de entrega(opcional)"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/writeDelDate" />
+
+        <ImageView
+            android:id="@+id/clock_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:padding="9dp"
+            android:src="@drawable/access_time"
+            app:layout_constraintBottom_toBottomOf="@+id/writeDelTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/writeDelTime" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabDetail"
+            style="@style/fab_btn_det"
+            android:layout_marginEnd="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.050970875" />
+
+        <!--    Guidelines-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

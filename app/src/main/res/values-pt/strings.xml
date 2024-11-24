@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">G10_ToDoTasks</string>
+    <string name="taskTitle">Minhas tarefas</string>
+    <string name="editTask">Digite a tarefa a ser criada aqui</string>
+    <string name="editBtn">Editar</string>
+    <string name="removeBtn">Apagar</string>
+    <string name="delivery_time">Prazo de entrega</string>
+</resources>

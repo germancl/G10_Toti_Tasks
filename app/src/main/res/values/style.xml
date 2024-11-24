@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <style name="title_main">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:text">@string/taskTitle</item>
+        <item name="android:textSize">@dimen/titleSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="fab_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:src">@drawable/add</item>
+    </style>
+
+    <style name="fab_btn_det">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:src">@drawable/done</item>
+    </style>
+</resources>

@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/newTaskText"
         android:layout_width="match_parent"
@@ -8,6 +9,7 @@
         android:background="@null"
         android:hint="Nova Tarefa"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/newTaskButton"
         android:layout_width="wrap_content"
@@ -19,4 +21,6 @@
         android:textAllCaps="false"
         android:textColor="@android:color/darker_gray"
         android:textSize="15sp" />
+
+
 </RelativeLayout>
