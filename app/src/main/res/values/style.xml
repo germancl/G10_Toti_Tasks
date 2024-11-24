@@ -17,4 +17,12 @@
         <item name="android:elevation">6dp</item>
         <item name="android:src">@drawable/add</item>
     </style>
+
+    <style name="fab_btn_det">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:src">@drawable/done</item>
+    </style>
 </resources>

@@ -4,6 +4,7 @@
     <string name="editTask">Enter the task to be created here</string>
     <string name="editBtn">Edit</string>
     <string name="removeBtn">Remove</string>
+    <string name="delivery_time">Delivery time</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>
