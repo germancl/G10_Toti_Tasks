@@ -9,63 +9,12 @@
         android:layout_height="match_parent"
         tools:context=".UI.MainActivity">
         <!--Layout Items-->
-
-        <!--    tools:listitem="@layout/tasks" MOSTRA RECYCLER VIEW-->
-
-
-        <!--        tools:listitem="@layout/tasks" />-->
-
-        <!--    <TextView-->
-        <!--        android:id="@+id/dt_title"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:text="@string/delivery_time"-->
-        <!--        android:textColor="@color/secondary"-->
-        <!--        android:textStyle="bold"-->
-        <!--        app:layout_constraintStart_toStartOf="@+id/leftGuide"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/bottomMiddleGuide" />-->
-
-        <!--    <Spinner-->
-        <!--        android:id="@+id/dates"-->
-        <!--        android:layout_width="140dp"-->
-        <!--        android:layout_height="23dp"-->
-        <!--        android:layout_below="@id/name"-->
-        <!--        android:layout_alignParentStart="true"-->
-        <!--        android:layout_toStartOf="@+id/times"-->
-        <!--        android:entries="@array/planets_array"-->
-        <!--        app:layout_constraintBottom_toTopOf="@+id/times"-->
-        <!--        app:layout_constraintStart_toStartOf="@+id/leftGuide"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/bottomMiddleGuide"-->
-        <!--        app:layout_constraintVertical_bias="0.754" />-->
-
-        <!--    <Spinner-->
-        <!--        android:id="@id/times"-->
-        <!--        android:layout_width="137dp"-->
-        <!--        android:layout_height="26dp"-->
-        <!--        android:layout_below="@id/name"-->
-        <!--        android:layout_alignParentEnd="true"-->
-        <!--        android:layout_marginBottom="16dp"-->
-        <!--        app:layout_constraintBottom_toTopOf="@+id/bottomGuide"-->
-        <!--        app:layout_constraintStart_toStartOf="@+id/leftGuide" />-->
-
-        <!--    <TextView-->
-        <!--        android:id="@+id/mainTitle"-->
-        <!--        style="@style/title_main"-->
-        <!--        android:layout_marginTop="12dp"-->
-        <!--        app:drawableEndCompat="@drawable/checklist"-->
-        <!--        app:drawableTint="@color/secondary"-->
-        <!--        app:layout_constraintEnd_toStartOf="@+id/rightGuide"-->
-        <!--        app:layout_constraintHorizontal_bias="0.506"-->
-        <!--        app:layout_constraintStart_toStartOf="@+id/leftGuide"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/topGuide" />-->
-
         <include
             android:id="@+id/customToolbarMain"
             layout="@layout/custom_toolbar_main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -79,6 +28,7 @@
             app:layout_constraintHorizontal_bias="0.405"
             app:layout_constraintStart_toStartOf="@+id/leftGuide"
             app:layout_constraintTop_toTopOf="@+id/bottomGuide" />
+        <!--    tools:listitem="@layout/tasks" MOSTRA RECYCLER VIEW-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/leftGuide"
@@ -94,13 +44,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
-
-        <!--    <androidx.constraintlayout.widget.Guideline-->
-        <!--        android:id="@+id/bottomMiddleGuide"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:orientation="horizontal"-->
-        <!--        app:layout_constraintGuide_begin="646dp" />-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/topGuide"
