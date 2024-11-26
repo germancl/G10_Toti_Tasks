@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.g10_todotasks"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.g10_todotasks"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -54,6 +54,7 @@ dependencies {
     // For control over item selection of both touch and mouse driven selection
     implementation(libs.androidx.recyclerview.selection)
     implementation(libs.androidx.cardview)
+    implementation(libs.support.annotations)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

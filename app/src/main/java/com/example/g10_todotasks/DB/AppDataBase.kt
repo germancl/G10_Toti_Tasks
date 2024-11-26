@@ -1,15 +1,30 @@
 package com.example.g10_todotasks.DB
 
+import android.service.autofill.UserData
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.g10_todotasks.Model.UserData
 
-@Database(
-    entities = [
-        UserData::class
-    ], version = 1
-)
-
-abstract class AppDataBase : RoomDatabase() {
-    //TODO:
+@Database(entities = [UserData::class], version = 1, exportSchema = false)
+abstract class TaskDatabase(title: String, description: String, isCompleted: Boolean) : RoomDatabase() {
+    abstract fun taskDao(): TaskDao
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,18 +1,24 @@
 package com.example.g10_todotasks.DB
 
-interface UserDao {
-//    @Insert
-    //TODO:
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Dao
+import androidx.room.Update
+import com.example.g10_todotasks.Model.Task
 
-//    @Query()
-    //TODO:
+@Dao interface TaskDao {
+    @Insert
+    suspend fun insert(task: Task)
 
-//    @Update
-    //TODO:
+    @Delete
+    suspend fun delete(task: Task)
 
-//    @Delete
-    //TODO:
+    @Update
+    suspend fun update(task: Task)
 
-//    @Query()
-    //TODO:
-}
+    @Query("SELECT * FROM task_table")
+    suspend fun getAllTasks(): List<Task>
+
+    @Query("DELETE FROM task_table WHERE id = :taskId")
+    suspend fun deleteTask(taskId: Int) }
