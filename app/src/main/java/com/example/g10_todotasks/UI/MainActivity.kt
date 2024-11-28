@@ -1,32 +1,34 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.g10_todotasks.UI
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.g10_todotasks.Model.Data
 import com.example.g10_todotasks.R
 import com.example.g10_todotasks.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: Adapter
     private lateinit var dataList: ArrayList<Data>
-    lateinit var titleList: ArrayList<String>
-
-    private lateinit var binding: ActivityMainBinding
-
+    private lateinit var titleList: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        // Configurar ViewBinding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Inicializar la interfaz
         initUI()
 
+        // Crear lista de títulos y datos
         titleList = arrayListOf(
             "Fazer compras no supermercado",
             "task2",
@@ -35,38 +37,29 @@ class MainActivity : AppCompatActivity() {
             "task5"
         )
 
-        //        Init data
-        dataList = arrayListOf<Data>()
+        dataList = arrayListOf()
         getData()
 
-        //Set up RecyclerView
-        recyclerView = findViewById(R.id.recyclerView)
-
-        //Use a LinearLayoutManager
-        //vertical
-        recyclerView.setLayoutManager(
-            LinearLayoutManager(
-                this,
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-        )
-
-        //Specify the adapter
+        // Configurar RecyclerView
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = Adapter(dataList)
-        recyclerView.setAdapter(adapter)
+        binding.recyclerView.adapter = adapter
     }
 
     private fun initUI() {
+        // Configurar botón "arrBack"
         binding.customToolbarMain.arrBack.setOnClickListener {
-            handleButtonClickToMain()
+            onBackPressed() // Regresar a la Activity anterior
         }
+
+        // Configurar botón "addTask"
         binding.customToolbarMain.addTask.setOnClickListener {
             handleButtonClickToDetail()
-        }
+            }
+
+        // Configurar título
         binding.customToolbarMain.mainTitle.text = "My tasks"
     }
-
 
     private fun handleButtonClickToDetail() {
         val intent = Intent(applicationContext, DetailActivity::class.java)
@@ -74,13 +67,10 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun handleButtonClickToMain() {
-        Toast.makeText(applicationContext, "You are already on the home", Toast.LENGTH_SHORT).show()
-    }
-
     private fun getData() {
         for (i in titleList.indices) {
-            dataList.add(Data("sampleData"))
+            dataList.add(Data("sampleData $i"))
         }
     }
 }
+
