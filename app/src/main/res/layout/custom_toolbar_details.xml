@@ -9,7 +9,7 @@
         android:background="@color/primary">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/arrBack"
+            android:id="@+id/arrBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:paddingStart="21dp"
@@ -29,7 +29,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/arrBack"
+            app:layout_constraintStart_toEndOf="@id/arrBackBtn"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,10 +47,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        binding.customToolbarDetails.arrBack.setOnClickListener {
+        binding.customToolbarDetails.arrBackBtn.setOnClickListener {
             handleButtonClickToMain()
         }
-        binding.customToolbarDetails.detailsTitle.text = "My tasks details"
+        binding.customToolbarDetails.detailsTitle.text = getString(R.string.detailsTitle)
     }
 
     private fun handleButtonClickToMain() {

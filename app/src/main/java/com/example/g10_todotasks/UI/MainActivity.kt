@@ -76,10 +76,10 @@ class MainActivity : AppCompatActivity() {
 //    }
 
     private fun initUI() {
-        binding.customToolbarMain.arrBack.setOnClickListener {
+        binding.customToolbarMain.arrBackBtn.setOnClickListener {
             handleButtonClickToMain()
         }
-        binding.customToolbarMain.addTask.setOnClickListener {
+        binding.customToolbarMain.addTaskBtn.setOnClickListener {
             handleButtonClickToDetail()
         }
         binding.customToolbarMain.mainTitle.text = getString(R.string.mainActTitle)
