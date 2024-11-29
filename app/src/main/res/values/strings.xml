@@ -5,6 +5,8 @@
     <string name="editBtn">Edit</string>
     <string name="removeBtn">Remove</string>
     <string name="delivery_time">Delivery time</string>
+    <string name="mainActTitle">My tasks</string>
+    <string name="noMoreRet">You are already on the home</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

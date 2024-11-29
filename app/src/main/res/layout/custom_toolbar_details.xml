@@ -19,13 +19,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/mainTitle"
+            android:id="@+id/detailsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="55dp"
             android:text="My tasks"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="21sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

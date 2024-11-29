@@ -57,9 +57,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //    Room DB
+    //Room Database
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
-    ksp(libs.dagger.compiler)
-    implementation(kotlin("script-runtime"))
+    ksp(libs.androidx.room.compiler)
+    //Coroutines para viewmodels
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 }

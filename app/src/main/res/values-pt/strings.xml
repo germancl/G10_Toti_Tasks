@@ -6,4 +6,6 @@
     <string name="editBtn">Editar</string>
     <string name="removeBtn">Apagar</string>
     <string name="delivery_time">Prazo de entrega</string>
+    <string name="mainActTitle">Minhas tarefas</string>
+    <string name="noMoreRet">Você já está no início</string>
 </resources>
