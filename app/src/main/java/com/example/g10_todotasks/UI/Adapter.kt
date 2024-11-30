@@ -31,6 +31,6 @@ class Adapter(private val taskItemList: List<TaskItem>) :
 
 class TaskViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(task: TaskItem) {
-        view.findViewById<TextView>(R.id.writeTask).text = task.dataTitle
+        view.findViewById<TextView>(R.id.task_name).text = task.dataTitle
     }
 }
