@@ -9,4 +9,5 @@
     <string name="mainActTitle">Minhas tarefas</string>
     <string name="noMoreRet">Você já está no início</string>
     <string name="detailsTitle">Minhas tarefas - detalhes</string>
+    <string name="taskName">Tarefa: %s</string>
 </resources>

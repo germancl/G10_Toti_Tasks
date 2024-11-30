@@ -25,14 +25,14 @@
             app:layout_constraintStart_toStartOf="@+id/leftGuide"
             app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
-        <EditText
-            android:id="@+id/writeTask"
+        <TextView
+            android:id="@+id/task_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Digite a nova tarefa que deseja incluir"
             android:textSize="21dp"
             app:layout_constraintStart_toStartOf="@+id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/textTask" />
+            app:layout_constraintTop_toBottomOf="@+id/textTask"
+            tools:text="task: task sample" />
 
         <TextView
             android:id="@+id/delTime"
@@ -43,7 +43,7 @@
             android:text="Qual o prazo para ser realizada?"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/writeTask" />
+            app:layout_constraintTop_toBottomOf="@+id/task_name" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/writeDelDate"
