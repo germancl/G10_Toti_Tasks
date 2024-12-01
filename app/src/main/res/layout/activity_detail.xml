@@ -19,7 +19,7 @@
             android:id="@+id/textTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:text="Qual a tarefa a ser realizada?"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/leftGuide"
@@ -88,7 +88,7 @@
             app:layout_constraintStart_toEndOf="@+id/writeDelTime"
             app:layout_constraintTop_toBottomOf="@+id/calendar_btn" />
 
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
         <!--            android:id="@+id/fabDetail"-->
         <!--            style="@style/fab_btn_det"-->
         <!--            android:layout_marginEnd="55dp"-->

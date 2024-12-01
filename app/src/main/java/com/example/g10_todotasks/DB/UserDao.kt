@@ -21,6 +21,9 @@ interface UserDao {
     @Delete
     fun delete(task: TaskData)
 
+    @Query("DELETE FROM tasks_table")
+    fun deleteAllTasks()
+
 //    @Query("SELECT * FROM tasks_table WHERE id IN (:tasksIds)")
 //    fun loadAllByIds(tasksIds: IntArray): List<UserData>
 //
