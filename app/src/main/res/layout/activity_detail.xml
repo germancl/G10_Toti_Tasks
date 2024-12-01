@@ -88,13 +88,13 @@
             app:layout_constraintStart_toEndOf="@+id/writeDelTime"
             app:layout_constraintTop_toBottomOf="@+id/calendar_btn" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabDetail"
-            style="@style/fab_btn_det"
-            android:layout_marginEnd="55dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="ContentDescription,MissingConstraints" />
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--            android:id="@+id/fabDetail"-->
+        <!--            style="@style/fab_btn_det"-->
+        <!--            android:layout_marginEnd="55dp"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/bottomGuide"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            tools:ignore="ContentDescription,MissingConstraints" />-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/topGuide"

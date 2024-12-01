@@ -60,8 +60,8 @@ class DetailActivity : DialogFragment() {
 
         return MaterialAlertDialogBuilder(requireActivity(), theme)
             .setView(view)
-            .setTitle("Adicionar Usuário")
-            .setMessage("Adicione aqui")
+//            .setTitle("Adicionar Usuário")
+//            .setMessage("Adicione aqui")
             .setPositiveButton("OK") { dialog, _ ->
                 val user = TaskData(
                     taskData?.id ?: 0,
