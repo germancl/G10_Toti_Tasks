@@ -18,6 +18,7 @@ import java.util.Locale
 
 class DetailActivity : DialogFragment() {
     private lateinit var editTextName: TextInputEditText
+
     private var taskData: TaskData? = null
     private var toEdit: Boolean = false
     private var listener: Listener? = null
@@ -33,7 +34,6 @@ class DetailActivity : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val inflater = requireActivity().layoutInflater
         val view = inflater.inflate(R.layout.activity_detail, null)
-//        binding = setContentView(context, R.layout.activity_detail)/
 
         editTextName = view.findViewById(R.id.task_name)
 
@@ -58,16 +58,15 @@ class DetailActivity : DialogFragment() {
         return MaterialAlertDialogBuilder(requireActivity(), theme)
             .setView(view)
             .setPositiveButton("OK") { dialog, _ ->
-                val user = TaskData(
+                val task = TaskData(
                     taskData?.id ?: 0,
                     editTextName.text.toString(),
-//                    editTextAge.text.toString().toIntOrNull() ?: 0
                 )
 
                 if (toEdit)
-                    listener?.onEditUser(user)
+                    listener?.onEditUser(task)
                 else
-                    listener?.onAddUser(user)
+                    listener?.onAddUser(task)
 
                 dialog.dismiss()
             }
@@ -81,7 +80,6 @@ class DetailActivity : DialogFragment() {
     interface Listener {
         fun onAddUser(task: TaskData)
         fun onEditUser(task: TaskData)
-//        fun onDeleteUser(task: TaskData)
     }
 
     companion object {

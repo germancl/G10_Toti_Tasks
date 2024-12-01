@@ -27,7 +27,7 @@ abstract class AppDataBase : RoomDatabase() {
                     "app_database"
                 )
                     // Remover esta linha para não permitir acesso ao banco de dados na main thread
-                    .allowMainThreadQueries()
+//                    .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 instance

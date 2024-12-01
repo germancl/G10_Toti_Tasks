@@ -32,9 +32,6 @@ class Adapter(
             true
         }
 
-//        TODO:onswipe
-
-
         viewHolder.bind(taskItemList[position])
     }
 
@@ -48,9 +45,9 @@ class Adapter(
         notifyItemRangeInserted(lastIndex, taskItemList.size)
     }
 
-    fun deleteItem(position: Int): TaskData {
-        return taskItemList.removeAt(position)
-    }
+//    fun deleteItem(position: Int): TaskData {
+//        return taskItemList.removeAt(position)
+//    }
 
     fun getTaskAt(position: Int): TaskData {
         return taskItemList[position]
@@ -59,7 +56,6 @@ class Adapter(
     interface Listener {
         fun onClick(task: TaskData)
         fun onLongClick(task: TaskData)
-        fun onSwipe(task: TaskData)
     }
 }
 

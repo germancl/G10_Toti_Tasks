@@ -161,8 +161,4 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
     override fun onLongClick(task: TaskData) {
         openUserDialog()
     }
-
-    override fun onSwipe(task: TaskData) {
-        viewModel.deleteTask(task)
-    }
 }
