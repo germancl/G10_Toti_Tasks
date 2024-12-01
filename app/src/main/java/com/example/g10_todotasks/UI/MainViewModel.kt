@@ -48,12 +48,12 @@ class MainViewModel : ViewModel() {
             database.userDao().delete(task)
             listTaskItem()
         }
+    }
 
-        fun deleteAllTasks(task: TaskData) {
-            viewModelScope.launch(Dispatchers.IO) {
-                database.userDao().deleteAllTasks()
-                listTaskItem()
-            }
+    fun deleteAllTasks() {
+        viewModelScope.launch(Dispatchers.IO) {
+            database.userDao().deleteAllTasks()
+            listTaskItem()
         }
     }
 }

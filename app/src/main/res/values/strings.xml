@@ -8,7 +8,7 @@
     <string name="mainActTitle">My tasks</string>
     <string name="noMoreRet">You are already on the home</string>
     <string name="detailsTitle">My tasks details</string>
-    <string name="taskName">Task: %s</string>
+    <string name="taskName"> %s</string>
     <string name="cancel">Cancel</string>
     <string name="tasks_details">Task details</string>
     <string name="guideClick">Click for a few seconds to edit or swipe to remove</string>
