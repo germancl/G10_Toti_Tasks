@@ -63,4 +63,5 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     //Coroutines para viewmodels
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.recyclerview.swipedecorator)
 }

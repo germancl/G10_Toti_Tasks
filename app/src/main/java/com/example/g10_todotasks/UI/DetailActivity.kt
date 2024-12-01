@@ -3,7 +3,6 @@ package com.example.g10_todotasks.UI
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.TimePickerDialog
-import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.ImageView
@@ -42,8 +41,6 @@ class DetailActivity : DialogFragment() {
             editTextName.setText(taskData?.name)
         }
 
-//        initUI()
-
 //        dateSelected = view.findViewById(R.id.writeDelDate)
 //        btnPickDate = view.findViewById(R.id.calendar_btn)
 //
@@ -60,8 +57,6 @@ class DetailActivity : DialogFragment() {
 
         return MaterialAlertDialogBuilder(requireActivity(), theme)
             .setView(view)
-//            .setTitle("Adicionar Usuário")
-//            .setMessage("Adicione aqui")
             .setPositiveButton("OK") { dialog, _ ->
                 val user = TaskData(
                     taskData?.id ?: 0,
@@ -86,6 +81,7 @@ class DetailActivity : DialogFragment() {
     interface Listener {
         fun onAddUser(task: TaskData)
         fun onEditUser(task: TaskData)
+//        fun onDeleteUser(task: TaskData)
     }
 
     companion object {
@@ -97,19 +93,6 @@ class DetailActivity : DialogFragment() {
                 }
                 this.listener = listener
             }
-    }
-
-    private fun initUI() {
-        binding.customToolbarDetails.arrBackBtn.setOnClickListener {
-            handleButtonClickToMain()
-        }
-        binding.customToolbarDetails.detailsTitle.text = getString(R.string.detailsTitle)
-    }
-
-    private fun handleButtonClickToMain() {
-        val intent = Intent(context, MainActivity::class.java)
-        startActivity(intent)
-//        finish()
     }
 
     private fun showDatePicker() {

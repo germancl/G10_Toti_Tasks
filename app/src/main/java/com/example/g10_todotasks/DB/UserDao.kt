@@ -16,10 +16,10 @@ interface UserDao {
     fun getAll(): List<TaskData>
 
     @Update
-    fun updateUser(user: TaskData)
+    fun updateUser(task: TaskData)
 
     @Delete
-    fun delete(user: TaskData)
+    fun delete(task: TaskData)
 
 //    @Query("SELECT * FROM tasks_table WHERE id IN (:tasksIds)")
 //    fun loadAllByIds(tasksIds: IntArray): List<UserData>

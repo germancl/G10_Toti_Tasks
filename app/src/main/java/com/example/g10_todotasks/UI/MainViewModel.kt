@@ -29,23 +29,23 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun addTask(user: TaskData) {
+    fun addTask(task: TaskData) {
         viewModelScope.launch(Dispatchers.IO) {
-            database.userDao().insertAll(user)
+            database.userDao().insertAll(task)
             listTaskItem()
         }
     }
 
-    fun updateTask(user: TaskData) {
+    fun updateTask(task: TaskData) {
         viewModelScope.launch(Dispatchers.IO) {
-            database.userDao().updateUser(user)
+            database.userDao().updateUser(task)
             listTaskItem()
         }
     }
 
-    fun deleteTask(user: TaskData) {
+    fun deleteTask(task: TaskData) {
         viewModelScope.launch(Dispatchers.IO) {
-            database.userDao().delete(user)
+            database.userDao().delete(task)
             listTaskItem()
         }
     }

@@ -12,4 +12,5 @@
     <string name="taskName">Tarefa: %s</string>
     <string name="cancel">Cancelar</string>
     <string name="tasks_details">Detalhes da tarefa</string>
+    <string name="guideClick">Clique por alguns segundos para editar ou deslize para remover</string>
 </resources>
