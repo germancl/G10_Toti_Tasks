@@ -9,4 +9,5 @@
     <string name="noMoreRet">You are already on the home</string>
     <string name="detailsTitle">My tasks details</string>
     <string name="taskName">Task: %s</string>
+    <string name="cancel">Cancelar</string>
 </resources>

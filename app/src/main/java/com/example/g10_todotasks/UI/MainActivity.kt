@@ -8,72 +8,63 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.g10_todotasks.Model.TaskData
 import com.example.g10_todotasks.Model.TaskItem
 import com.example.g10_todotasks.R
 import com.example.g10_todotasks.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    private val viewModel: TaskViewModel by viewModels()
+class MainActivity : AppCompatActivity(), Adapter.Listener {
+    private val viewModel: MainViewModel by viewModels()
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Adapter
     private lateinit var taskItemList: ArrayList<TaskItem>
     private lateinit var titleList: ArrayList<String>
     private lateinit var binding: ActivityMainBinding
-    private lateinit var taskViewModel: TaskViewModel
-
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        viewModel.initDb(applicationContext)
-
-//        setRecyclerView()
+        setupObservers()
 
         initUI()
 
-        titleList = arrayListOf(
-            "Fazer compras no supermercado",
-            "task2",
-            "task3",
-            "task4",
-            "task5"
-        )
+        viewModel.initDb(applicationContext)
 
-        //        Init data
-        taskItemList = arrayListOf<TaskItem>()
-        getData()
+        adapter = Adapter(mutableListOf(), this)
 
-        //Set up RecyclerView
-        recyclerView = findViewById(R.id.recyclerView)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = adapter
 
-        //Use a LinearLayoutManager
-        //vertical
-        recyclerView.setLayoutManager(
-            LinearLayoutManager(
-                this,
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-        )
-
-        //Specify the adapter
-        adapter = Adapter(taskItemList)
-        recyclerView.setAdapter(adapter)
+        binding.customToolbarMain.addTaskBtn.setOnClickListener {
+            openUserDialog()
+        }
     }
 
-//    private fun setRecyclerView() {
-//        val mainActivity = this
-//        taskViewModel.taskItems.observe(this) {
-//            binding.recyclerView.apply {
-//                {
-//                    layoutManager = LinearLayoutManager(applicationContext)
-//                }
-//            }
-//        }
-//    }
+    private fun openUserDialog(task: TaskData? = null) {
+        val dialog = DetailActivity.newInstance(task, object : DetailActivity.Listener {
+            override fun onAddUser(task: TaskData) {
+                viewModel.addTask(task)
+            }
+
+            override fun onEditUser(task: TaskData) {
+                viewModel.updateTask(task)
+            }
+        })
+
+        dialog.show(supportFragmentManager, "AddUserDialog")
+    }
+
+    private fun setupObservers() {
+        viewModel.taskItems.observe(this) { taskItems ->
+            adapter.addUsers(taskItems)
+        }
+    }
 
     private fun initUI() {
         binding.customToolbarMain.arrBackBtn.setOnClickListener {
@@ -102,11 +93,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onClick(user: UserData) {
-//        openUserDialog(user)
-//    }
-//
-//    override fun onLongClick(user: UserData) {
-//        viewModel.deleteTask(user)
-//    }
+    override fun onClick(task: TaskData) {
+        openUserDialog(task)
+    }
+
+    override fun onLongClick(task: TaskData) {
+        viewModel.deleteTask(task)
+    }
 }

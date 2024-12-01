@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.g10_todotasks.Model.UserData
+import com.example.g10_todotasks.Model.TaskData
 
 @Database(
     entities = [
-        UserData::class
+        TaskData::class
     ], version = 1
 )
 

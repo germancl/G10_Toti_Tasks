@@ -10,4 +10,5 @@
     <string name="noMoreRet">Você já está no início</string>
     <string name="detailsTitle">Minhas tarefas - detalhes</string>
     <string name="taskName">Tarefa: %s</string>
+    <string name="cancel">Cancel</string>
 </resources>

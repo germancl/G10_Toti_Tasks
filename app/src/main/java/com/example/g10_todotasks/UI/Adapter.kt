@@ -5,11 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.g10_todotasks.Model.TaskItem
+import com.example.g10_todotasks.Model.TaskData
 import com.example.g10_todotasks.R
 
-class Adapter(private val taskItemList: List<TaskItem>) :
-    RecyclerView.Adapter<TaskViewHolder>() {
+class Adapter(
+    private val taskItemList: MutableList<TaskData>,
+    val listener: Listener
+) : RecyclerView.Adapter<TaskViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TaskViewHolder {
         val itemView =
@@ -18,19 +20,40 @@ class Adapter(private val taskItemList: List<TaskItem>) :
         return TaskViewHolder(itemView)
     }
 
-    override fun getItemCount(): Int {
-        return taskItemList.size
-    }
+    override fun getItemCount() = taskItemList.size
 
     override fun onBindViewHolder(viewHolder: TaskViewHolder, position: Int) {
         viewHolder.itemView.setOnClickListener {
-            viewHolder.bind(taskItemList[position])
+            listener.onClick(taskItemList[position])
         }
+
+        viewHolder.itemView.setOnLongClickListener {
+            listener.onLongClick(taskItemList[position])
+            true
+        }
+
+        viewHolder.bind(taskItemList[position])
+    }
+
+    fun addUsers(tasks: List<TaskData>) {
+        val lastIndex = taskItemList.lastIndex
+        notifyItemRangeRemoved(0, taskItemList.size)
+
+        taskItemList.clear()
+        taskItemList.addAll(tasks)
+
+        notifyItemRangeInserted(lastIndex, taskItemList.size)
+    }
+
+    interface Listener {
+        fun onClick(task: TaskData)
+        fun onLongClick(task: TaskData)
     }
 }
 
 class TaskViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(task: TaskItem) {
-        view.findViewById<TextView>(R.id.task_name).text = task.dataTitle
+    fun bind(task: TaskData) {
+        view.findViewById<TextView>(R.id.tasksTitle).text =
+            String.format(view.context.getString(R.string.taskName), task.name)
     }
 }

@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="@+id/leftGuide"
             app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/task_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

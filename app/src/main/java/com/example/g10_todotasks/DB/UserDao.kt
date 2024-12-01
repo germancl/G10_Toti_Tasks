@@ -5,21 +5,21 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.g10_todotasks.Model.UserData
+import com.example.g10_todotasks.Model.TaskData
 
 @Dao
 interface UserDao {
     @Insert
-    fun insertAll(vararg usersData: UserData)
+    fun insertAll(vararg usersData: TaskData)
 
     @Query("SELECT * FROM tasks_table")
-    fun getAll(): List<UserData>
+    fun getAll(): List<TaskData>
 
     @Update
-    fun updateUser(user: UserData)
+    fun updateUser(user: TaskData)
 
     @Delete
-    fun delete(user: UserData)
+    fun delete(user: TaskData)
 
 //    @Query("SELECT * FROM tasks_table WHERE id IN (:tasksIds)")
 //    fun loadAllByIds(tasksIds: IntArray): List<UserData>
