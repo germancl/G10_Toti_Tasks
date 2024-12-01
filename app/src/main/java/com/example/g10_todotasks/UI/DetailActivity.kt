@@ -41,19 +41,19 @@ class DetailActivity : DialogFragment() {
             editTextName.setText(taskData?.name)
         }
 
-//        dateSelected = view.findViewById(R.id.writeDelDate)
-//        btnPickDate = view.findViewById(R.id.calendar_btn)
-//
-//        btnPickDate.setOnClickListener {
-//            showDatePicker()
-//        }
-//
-//        timeSelected = view.findViewById(R.id.writeDelTime)
-//        btnPickTime = view.findViewById(R.id.clock_btn)
-//
-//        btnPickTime.setOnClickListener {
-//            showTimePicker()
-//        }
+        dateSelected = view.findViewById(R.id.writeDelDate)
+        btnPickDate = view.findViewById(R.id.calendar_btn)
+
+        btnPickDate.setOnClickListener {
+            showDatePicker()
+        }
+
+        timeSelected = view.findViewById(R.id.writeDelTime)
+        btnPickTime = view.findViewById(R.id.clock_btn)
+
+        btnPickTime.setOnClickListener {
+            showTimePicker()
+        }
 
         return MaterialAlertDialogBuilder(requireActivity(), theme)
             .setView(view)
@@ -61,6 +61,8 @@ class DetailActivity : DialogFragment() {
                 val task = TaskData(
                     taskData?.id ?: 0,
                     editTextName.text.toString(),
+                    dateSelected.text.toString(),
+                    timeSelected.text.toString()
                 )
 
                 if (toEdit)

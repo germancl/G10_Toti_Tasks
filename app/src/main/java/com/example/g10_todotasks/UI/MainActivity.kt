@@ -3,8 +3,6 @@ package com.example.g10_todotasks.UI
 import android.content.Intent
 import android.graphics.Canvas
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -28,9 +26,10 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        initUI()
-        setupObservers()
 
+        initUI()
+
+        setupObservers()
 
         viewModel.initDb(applicationContext)
 
@@ -99,19 +98,19 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         }).attachToRecyclerView(recyclerView)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.del_all_tasks_menu -> {
-                viewModel.deleteAllTasks()
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.main_menu, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item.itemId) {
+//            R.id.del_all_tasks_menu -> {
+//                viewModel.deleteAllTasks()
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
     private fun setupObservers() {
         viewModel.taskItems.observe(this) { taskItems ->
@@ -159,6 +158,6 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
     }
 
     override fun onLongClick(task: TaskData) {
-        openUserDialog()
+        openUserDialog(task)
     }
 }

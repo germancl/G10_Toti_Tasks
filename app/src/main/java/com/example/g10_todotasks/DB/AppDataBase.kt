@@ -9,7 +9,8 @@ import com.example.g10_todotasks.Model.TaskData
 @Database(
     entities = [
         TaskData::class
-    ], version = 1
+    ], version = 2,
+    exportSchema = false
 )
 
 abstract class AppDataBase : RoomDatabase() {
@@ -28,6 +29,7 @@ abstract class AppDataBase : RoomDatabase() {
                 )
                     // Remover esta linha para não permitir acesso ao banco de dados na main thread
 //                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
                 instance

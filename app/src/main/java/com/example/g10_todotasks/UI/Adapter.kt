@@ -45,10 +45,6 @@ class Adapter(
         notifyItemRangeInserted(lastIndex, taskItemList.size)
     }
 
-//    fun deleteItem(position: Int): TaskData {
-//        return taskItemList.removeAt(position)
-//    }
-
     fun getTaskAt(position: Int): TaskData {
         return taskItemList[position]
     }
