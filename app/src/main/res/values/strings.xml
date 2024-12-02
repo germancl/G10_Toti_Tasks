@@ -5,11 +5,17 @@
     <string name="editBtn">Edit</string>
     <string name="removeBtn">Remove</string>
     <string name="delivery_time">Delivery time</string>
-
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-    </string-array>
+    <string name="mainActTitle">My tasks</string>
+    <string name="noMoreRet">You are already on the home</string>
+    <string name="detailsTitle">My tasks details</string>
+    <string name="taskName"> %s</string>
+    <string name="cancel">Cancel</string>
+    <string name="tasks_details">Task details</string>
+    <string name="guideClick">Click for a few seconds to edit or swipe to remove</string>
+    <string name="deadline">What is the deadline for this to be carried out?</string>
+    <string name="what_task">What is the task to be done?</string>
+    <string name="select_date">Select a date on the calendar</string>
+    <string name="select_time">Select the time on the clock</string>
+    <string name="clock_icon">clock icon</string>
+    <string name="calendar_icon">calendar icon</string>
 </resources>

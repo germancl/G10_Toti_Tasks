@@ -9,7 +9,7 @@
         android:background="@color/primary">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/arrBack"
+            android:id="@+id/arrBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:paddingStart="21dp"
@@ -27,12 +27,12 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/addTask"
-            app:layout_constraintStart_toEndOf="@id/arrBack"
+            app:layout_constraintEnd_toStartOf="@+id/addTaskBtn"
+            app:layout_constraintStart_toEndOf="@id/arrBackBtn"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/addTask"
+            android:id="@+id/addTaskBtn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:paddingEnd="21dp"
