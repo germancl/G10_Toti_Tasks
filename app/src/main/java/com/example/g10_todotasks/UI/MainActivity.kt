@@ -98,20 +98,6 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         }).attachToRecyclerView(recyclerView)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.main_menu, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.del_all_tasks_menu -> {
-//                viewModel.deleteAllTasks()
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
-
     private fun setupObservers() {
         viewModel.taskItems.observe(this) { taskItems ->
             adapter.addUsers(taskItems)
@@ -134,7 +120,7 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
 
     private fun initUI() {
         binding.customToolbarMain.arrBackBtn.setOnClickListener {
-            handleButtonClickToMain()
+            onBackPressedDispatcher.onBackPressed()
         }
         binding.customToolbarMain.addTaskBtn.setOnClickListener {
             handleButtonClickToDetail()
