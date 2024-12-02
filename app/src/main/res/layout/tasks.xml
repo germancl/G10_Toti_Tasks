@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/tasksTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,8 +22,8 @@
             android:ellipsize="marquee"
             android:singleLine="true"
             android:text="Exemplo dentro da app."
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -37,10 +37,6 @@ class DetailActivity : DialogFragment() {
 
         editTextName = view.findViewById(R.id.task_name)
 
-        if (taskData != null) {
-            editTextName.setText(taskData?.name)
-        }
-
         dateSelected = view.findViewById(R.id.writeDelDate)
         btnPickDate = view.findViewById(R.id.calendar_btn)
 
@@ -53,6 +49,12 @@ class DetailActivity : DialogFragment() {
 
         btnPickTime.setOnClickListener {
             showTimePicker()
+        }
+
+        if (taskData != null) {
+            editTextName.setText(taskData?.name)
+            dateSelected.setText(taskData?.date)
+            timeSelected.setText(taskData?.time)
         }
 
         return MaterialAlertDialogBuilder(requireActivity(), theme)
