@@ -64,4 +64,7 @@ dependencies {
     //Coroutines para viewmodels
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.recyclerview.swipedecorator)
+    // https://mvnrepository.com/artifact/com.google.android.material/material
+    runtimeOnly(libs.material)
+
 }
