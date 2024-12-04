@@ -21,4 +21,7 @@
     <string name="calendar_icon">ícone de calendário</string>
     <string name="need_wrt_create">Por favor, é necessário escrever uma tarefa para criar</string>
     <string name="need_wrt_edit">Por favor, é necessário escrever uma tarefa para editar</string>
+    <string name="sure">Tem certeza de que deseja excluir esta tarefa?</string>
+    <string name="y_sure">Sim</string>
+    <string name="n_sure">Não</string>
 </resources>

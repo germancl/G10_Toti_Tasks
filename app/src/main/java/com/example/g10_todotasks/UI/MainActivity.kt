@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -14,6 +15,7 @@ import com.example.g10_todotasks.Model.TaskData
 import com.example.g10_todotasks.R
 import com.example.g10_todotasks.databinding.ActivityMainBinding
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
+
 
 class MainActivity : AppCompatActivity(), Adapter.Listener {
     private val viewModel: MainViewModel by viewModels()
@@ -93,7 +95,20 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                viewModel.deleteTask(adapter.getTaskAt(viewHolder.bindingAdapterPosition))
+                val alert = AlertDialog.Builder(this@MainActivity)
+                alert.setMessage(getString(R.string.sure))
+                alert.setPositiveButton(getString(R.string.y_sure)) { dialog, arg1 ->
+                    viewModel.deleteTask(adapter.getTaskAt(viewHolder.bindingAdapterPosition))
+                    dialog.cancel()
+                }
+                alert.setNegativeButton(
+                    getString(R.string.n_sure)
+                ) { dialog, arg1 ->
+                    adapter.notifyItemChanged(viewHolder.bindingAdapterPosition)
+                    dialog.cancel()
+                }
+                alert.create()
+                alert.show();
             }
         }).attachToRecyclerView(recyclerView)
     }
@@ -142,10 +157,6 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
         val intent = Intent(applicationContext, DetailActivity::class.java)
         startActivity(intent)
         finish()
-    }
-
-    private fun handleButtonClickToMain() {
-        Toast.makeText(applicationContext, getString(R.string.noMoreRet), Toast.LENGTH_SHORT).show()
     }
 
     override fun onClick(task: TaskData) {
