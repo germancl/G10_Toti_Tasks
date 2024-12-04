@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.g10_todotasks.Model.TaskData
 import com.example.g10_todotasks.R
-import com.example.g10_todotasks.databinding.ActivityDetailBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
@@ -22,8 +21,6 @@ class DetailActivity : DialogFragment() {
     private var taskData: TaskData? = null
     private var toEdit: Boolean = false
     private var listener: Listener? = null
-
-    private lateinit var binding: ActivityDetailBinding
 
     private lateinit var dateSelected: TextView
     private lateinit var btnPickDate: ImageView
