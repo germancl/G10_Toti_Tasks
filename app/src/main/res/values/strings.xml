@@ -14,8 +14,10 @@
     <string name="guideClick">Click for a few seconds to edit or swipe to remove</string>
     <string name="deadline">What is the deadline for this to be carried out?</string>
     <string name="what_task">What is the task to be done?</string>
-    <string name="select_date">Select a date on the calendar</string>
-    <string name="select_time">Select the time on the clock</string>
+    <string name="select_date">Select a date on the calendar (optional)</string>
+    <string name="select_time">Select the time on the clock (optional)</string>
     <string name="clock_icon">clock icon</string>
     <string name="calendar_icon">calendar icon</string>
+    <string name="need_wrt_create">please, is necessary to write a task to create</string>
+    <string name="need_wrt_edit">please, is necessary to write a task to edit</string>
 </resources>

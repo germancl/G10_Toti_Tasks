@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/select_date"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
                 app:layout_constraintStart_toStartOf="@+id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/delTime"
@@ -65,14 +65,12 @@
                 android:id="@+id/calendar_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="37dp"
                 android:contentDescription="@string/calendar_icon"
-                android:padding="9dp"
                 android:src="@drawable/calendar_month"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/rightGuide"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.45"
                 app:layout_constraintStart_toEndOf="@+id/writeDelDate" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -81,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
                 android:hint="@string/select_time"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/writeDelDate"
@@ -92,10 +90,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/clock_icon"
-                android:padding="9dp"
                 android:src="@drawable/access_time"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/rightGuide"
-                app:layout_constraintHorizontal_bias="0.555"
                 app:layout_constraintStart_toEndOf="@+id/writeDelTime"
                 app:layout_constraintTop_toBottomOf="@+id/calendar_btn" />
 
