@@ -15,8 +15,10 @@
     <string name="guideClick">Clique por alguns segundos para editar ou deslize para remover</string>
     <string name="deadline">Qual o prazo para que seja realizada?</string>
     <string name="what_task">Qual é a tarefa a ser realizada?</string>>
-    <string name="select_date">Selecione uma data no calendário</string>
-    <string name="select_time">Selecione uma hora no relógio</string>
+    <string name="select_date">Selecione uma data no calendário (opcional)</string>
+    <string name="select_time">Selecione uma hora no relógio (opcional)</string>
     <string name="clock_icon">ícone de relógio</string>
     <string name="calendar_icon">ícone de calendário</string>
+    <string name="need_wrt_create">Por favor, é necessário escrever uma tarefa para criar</string>
+    <string name="need_wrt_edit">Por favor, é necessário escrever uma tarefa para editar</string>
 </resources>

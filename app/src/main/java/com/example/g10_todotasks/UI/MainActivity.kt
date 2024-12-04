@@ -74,9 +74,9 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
                     actionState,
                     isCurrentlyActive
                 )
-                    .addSwipeRightBackgroundColor(com.google.android.material.R.color.design_default_color_error)
+                    .addSwipeRightBackgroundColor(R.color.my_dark_primary)
                     .addSwipeRightActionIcon(R.drawable.delete_icon)
-                    .addSwipeLeftBackgroundColor(com.google.android.material.R.color.design_default_color_error)
+                    .addSwipeLeftBackgroundColor(R.color.my_dark_primary)
                     .addSwipeLeftActionIcon(R.drawable.delete_icon)
                     .create()
                     .decorate()
@@ -107,11 +107,21 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
     private fun openUserDialog(task: TaskData? = null) {
         val dialog = DetailActivity.newInstance(task, object : DetailActivity.Listener {
             override fun onAddUser(task: TaskData) {
-                viewModel.addTask(task)
+                if (task.name.isEmpty()) Toast.makeText(
+                    this@MainActivity,
+                    getString(R.string.need_wrt_create),
+                    Toast.LENGTH_SHORT
+                ).show()
+                else viewModel.addTask(task)
             }
 
             override fun onEditUser(task: TaskData) {
-                viewModel.updateTask(task)
+                if (task.name.isEmpty()) Toast.makeText(
+                    this@MainActivity,
+                    getString(R.string.need_wrt_edit),
+                    Toast.LENGTH_SHORT
+                ).show()
+                else viewModel.updateTask(task)
             }
         })
 
